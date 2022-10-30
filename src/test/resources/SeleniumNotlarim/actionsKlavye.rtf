@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red133\green96\blue154;\red32\green32\blue32;\red153\green168\blue186;
+\red88\green118\blue71;\red191\green100\blue38;}
+{\*\expandedcolortbl;;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Klavye  se\'e7enekleri \
+Actions classindan obje olusturulur\
+\
+action.keydown= tusa basmak\
+action.keydown(Key.SHIFT)= Shifte basmak.\
+Bu sekilde harfler hep buyuk yaz\uc0\u305 l\u305 r taki elimizi shiftten kald\u305 r\u305 ncaya kadar \
+Shifften kald\uc0\u305 rmak icin\
+action.keyUp(Key.SHIFT) elimizi kaldiririz boylece normale doner.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i\fs26 \cf2 \cb3 driver
+\f2\i0 \cf4 .get(\cf5 "https://amazon.com"\cf4 )\cf6 ;\
+\cf4 WebElement aramaKutusu =
+\f1\i \cf2 driver
+\f2\i0 \cf4 .findElement(By.
+\f1\i id
+\f2\i0 (\cf5 "twotabsearchtextbox"\cf4 ))\cf6 ;\
+  \cf4 Actions actions = \cf6 new \cf4 Actions(
+\f1\i \cf2 driver
+\f2\i0 \cf4 )\cf6 ;\
+  \cf4 actions.click(aramaKutusu).perform()\cf6 ;\
+  \cf4 actions.keyDown(Keys.
+\f1\i \cf2 SHIFT
+\f2\i0 \cf4 ).sendKeys(\cf5 "n"\cf4 ).keyUp(Keys.
+\f1\i \cf2 SHIFT
+\f2\i0 \cf4 ).\
+sendKeys(\cf5 "u"\cf4 ).sendKeys(\cf5 "t"\cf4 ).sendKeys(\cf5 "e"\cf4 ).sendKeys(\cf5 "l"\cf4 ).sendKeys(\cf5 "l"\cf4 ).sendKeys(\cf5 "a"\cf4 ).perform()\cf6 ;\
+  \cf4 actions.sendKeys(Keys.
+\f1\i \cf2 ENTER
+\f2\i0 \cf4 ).perform()\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Keys.TAB tusu bu tu\uc0\u351 la diger taba gecilir \
+Actions classta her zaman sonuna perform() eklenir\
+Ilk taba baslarken buran\uc0\u305 n locatesi al\u305 n\u305 r ve action objesi ile baslar \
+\
+action)click(ilk locate).sendkeys(\'93\'94)sendkeys(keys.TAB)\'85\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\fs26 \cf4 \cb3 actions.click(isimkutusu).sendKeys(\cf5 "hakan"\cf4 ).sendKeys(Keys.
+\f1\i \cf2 TAB
+\f2\i0 \cf4 ).sendKeys(\cf5 "Dag"\cf4 ).sendKeys(Keys.
+\f1\i \cf2 TAB
+\f2\i0 \cf4 ).perform()\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Keys.ARROW.DOWN bununla 1. Sini atlar 2. Sine ge\'e7er\
+\
+}

@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red153\green168\blue186;\red32\green32\blue32;\red133\green96\blue154;
+\red88\green118\blue71;\red191\green100\blue38;}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c52157\c37647\c60392;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Relative locator selenium 4 ile geldi genellikle resimler ile ilgili lokasyonlarda kullanilr taglari genelikle img dir.   \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 WebElement bestbuyyazisii=
+\f2\i \cf4 driver
+\f1\i0 \cf2 .findElement(RelativeLocator.\
+        
+\f2\i with
+\f1\i0 (By.
+\f2\i tagName
+\f1\i0 (\cf5 "img"\cf2 )).above(helloyazisi))\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+iki seye gorede tan\uc0\u305 mlanabilir sunun solunda sunun alt\u305 nda  \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 WebElement kanadabayragi=
+\f2\i \cf4 driver
+\f1\i0 \cf2 .findElement(RelativeLocator.
+\f2\i with
+\f1\i0 (By.
+\f2\i tagName
+\f1\i0 (\cf5 "h1"\cf2 )).above(chooseyazisi).\
+        toLeftOf(amerikabayragi))\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 Ancak neyin yan\uc0\u305 nda oldugunu s\'f6yl\'fcyorsak bahsettigimiz seylerin lokasyonunu almam\u305 z gerekiyor\
+\
+Assert ederken \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 Assert.
+\f2\i assertTrue
+\f1\i0 (bestbuyyazisii.isDisplayed())\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+\
+Bunun yan\uc0\u305 nda yada alt\u305 nda gorunuyor mu \
+\
+Is displayed gorunur durumda mi\
+Is selected secilmis mi\
+Is enabled: etkin mi bulunan lokasyon aktif mi degil mi\
+bunlar web elementleri icin kullan\uc0\u305 l\u305 r stringler icin kullan\u305 lmaz\
+}

@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red153\green168\blue186;\red32\green32\blue32;\red86\green132\blue173;
+\red191\green100\blue38;\red133\green96\blue154;\red88\green118\blue71;\red133\green96\blue154;\red32\green32\blue32;
+\red153\green168\blue186;\red88\green118\blue71;\red191\green100\blue38;\red86\green132\blue173;}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c33725\c51765\c67843;
+\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c12549\c12549\c12549;
+\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c33725\c51765\c67843;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13940\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Bilgisayar\uc0\u305 n hizi internet hizi ve ya gelen datan\u305 n buyuklugu gibi fakt\'f6rler y\'fcz\'fcnden senkronizasyon sorunlar\u305  ortaya \'e7\u305 kar. Mesela\
+Bir internet sayfas\uc0\u305 na gittiniz sayfa ge\'e7 aciliyor. Bu durumda bilgisayarinzin bu gece acilmaya kar\u351 \u305  uyum sa\u287 lamas\u305  gerekir. Bunun icin\
+1 thread.sleep\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 Thread.
+\f2\i sleep
+\f1\i0 (\cf4 3000\cf2 )\cf5 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 Her islem icin belirlenen sure kadar bekler islem bitsede bekler\
+(java) belirlenen bir sure belirlenir ornek soya iniyor normalde 10 sn de iniyor fakat siz 20 sn bekleme suresi koydunuz bu durumda bilgisayar indirse bile bekleme devam eder. \'c7\'fcnk\'fc bu webdriverden bagimsiz. Bir bekleme suresi 20 sn dolar ve indirme tamamland\uc0\u305  der \
+2. implicitwait(Duration..)(selenium) her islem icin belirlenen sure kadar bekler. Islem ger\'e7ekle\uc0\u351 ti\u287 inde beklemez\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf6 \cb3 driver\cf2 .manage().timeouts().implicitlyWait(Duration.
+\f2\i ofSeconds
+\f1\i0 (\cf4 15\cf2 ))\cf5 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 belirli bir bekleme suresi konulur ornegin web sayfas\uc0\u305 nin acilmasi icin15 sn konulur web sayfas\u305  acildiginda 5 sn sonra acildiginda imlicitwait 15 sn beklemez. Ancak 15 sn yi ge\'e7erse hata verir. \'c7ok uzun sure verdiginizde ise anlams\u305 z olur zaten bir sayfa eder int baglantisi normalse uzun sure cerdiginde a\'e7\u305 lmayan bir sayfa icin gereksiz bekleme suresi olmu\u351  olur \
+3.explicitwait.
+\f1\fs26 \cf2 \cb3 WebDriverWait wait = \cf5 new \cf2 WebDriverWait(\cf6 driver\cf5 , \cf2 Duration.
+\f2\i ofSeconds
+\f1\i0 (\cf4 90000\cf2 ))\cf5 ;\
+
+\f0\fs24 \cf0 \cb1  mesela tek bir islem yap\uc0\u305 yoruz bir dakika s\'fcrmesini bekliyoruz  indirme tamamlandigi an islem tamamlan\u305 yor. Ancak digerleri icin implicitwait \'e7al\u305 smaya devam ediyor. Explicit wait beklentimiz olan bir islem icin onceden belirledi\u287 imiz bekleme suresi  burada thread.sleep yaparsak gereksiz bekleme koyabiliriz. Explicitwait olursa sadece islem 1 dakika s\'fcrer  fakat imlicitwait k\u305 sa oldugunda iislem yar\u305 da kal\u305 r.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 WebElement element=wait.until(ExpectedConditions.
+\f2\i visibilityOfElementLocated
+\f1\i0 (By.
+\f2\i xpath
+\f1\i0 (\cf7 ""\cf2 )))\cf5 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Locate edece\uc0\u287 imiz element gorunur oluncaya kadar bekle demek\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i\fs26 \cf8 \cb9 driver
+\f1\i0 \cf10 .get(\cf11 "https://the-internet.herokuapp.com/dynamic_controls"\cf10 )\cf12 ;\
+\
+\cf10 WebElement Remove = 
+\f2\i \cf8 driver
+\f1\i0 \cf10 .findElement(By.
+\f2\i xpath
+\f1\i0 (\cf11 "//*[.='Remove']"\cf10 ))\cf12 ;\
+\cf10 Remove.click()\cf12 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+\
+Burada element gorunur oluncaya kadar beklenmesi gerekir bunun icin g\'f6r\'fcnecek elementin lokasyonu yap\uc0\u305 l\u305 r  ve bunun icin  \'f6ncelikle \
+1-\
+WebdriverWait clasindan obje olusturulur ve driver tanitilir ve uygun bekleme suresi eklenir\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf10 \cb9 WebDriverWait wait=\cf12 new \cf10 WebDriverWait(
+\f2\i \cf8 driver
+\f1\i0 \cf12 , \cf10 Duration.
+\f2\i ofSeconds
+\f1\i0 (\cf13 3\cf10 ))\cf12 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+2- sorgulamas\uc0\u305 n\u305  yaptigimize elementin yerinin lokasyonu yap\u305 l\u305 r \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf10 \cb9 WebElement itsgoneyazisi= wait.until(ExpectedConditions.\
+                          
+\f2\i visibilityOfElementLocated
+\f1\i0 (By.
+\f2\i xpath
+\f1\i0 (\cf11 "//*[.=\cf12 \\"\cf11 It's gone!\cf12 \\"\cf11 ]"\cf10 )))\cf12 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+3- son asamada ise assert edilir.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf10 \cb9 Assert.
+\f2\i assertTrue
+\f1\i0 (itsgoneyazisi.isDisplayed())\cf12 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 .}
