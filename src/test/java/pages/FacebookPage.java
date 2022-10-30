@@ -22,7 +22,9 @@ public class FacebookPage {
     @FindBy(xpath = "//button[@data-testid='royal_login_button']")
     public WebElement girisyap;
 
-    @FindBy(linkText= "Hesabını bul ve giriş yap.")
+   @FindBy(linkText= "Hesabını bul ve giriş yap.")
     public WebElement hesabinibulgirisyap;
+
+
 
 }
