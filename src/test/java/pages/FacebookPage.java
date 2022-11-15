@@ -22,9 +22,14 @@ public class FacebookPage {
     @FindBy(xpath = "//button[@data-testid='royal_login_button']")
     public WebElement girisyap;
 
-   @FindBy(linkText= "Hesabını bul ve giriş yap.")
-    public WebElement hesabinibulgirisyap;
 
+    @FindBy(xpath = "//img[@class='_9ay6 img']")
+    public WebElement uyariYazisi;
 
+    @FindBy(linkText = "Hesabını bul ve giriş yap.")
+    public WebElement yanlisKullaniciAdi;
+
+    @FindBy(className= "_9ay7")
+    public WebElement yanlisKyanlissifre;
 
 }

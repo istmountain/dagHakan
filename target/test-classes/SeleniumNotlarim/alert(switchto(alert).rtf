@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red133\green96\blue154;\red32\green32\blue32;\red153\green168\blue186;
+\red88\green118\blue71;\red191\green100\blue38;\red109\green109\blue109;\red133\green96\blue154;\red32\green32\blue32;
+\red153\green168\blue186;}
+{\*\expandedcolortbl;;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c12549\c12549\c12549;
+\csgenericrgb\c60000\c65882\c72941;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13580\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Bir web  sitesine gittigimizde karsimiza \'e7\uc0\u305 kan uyar\u305 lara alert denir handeln edilen  \'e7erezlere  HTML alert denir  locate edilip bu engel kald\u305 r\u305 labilir bazen inspect(incele) ile cozulemez javascript ile \'e7\'f6z\'fcl\'fcr  bunlara javascript alert denir  locate edilmez.\
+\
+Click yap\uc0\u305 l\u305 r ok dersin  js alert  \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i\fs26 \cf2 \cb3 driver
+\f2\i0 \cf4 .findElement(By.
+\f1\i xpath
+\f2\i0 (\cf5 "//*[text()='Click for JS Alert']"\cf4 )).click()\cf6 ;\
+
+\f1\i \cf2 driver
+\f2\i0 \cf4 .switchTo().alert().accept()\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 Accept tusu tamam ok anlam\uc0\u305 na gelir\
+\
+Evet yada hay\uc0\u305 r diye sorar birini secersin js  confirm\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i\fs26 \cf2 \cb3 driver
+\f2\i0 \cf4 .findElement(By.
+\f1\i xpath
+\f2\i0 (\cf5 "//*[text()='Click for JS Confirm']"\cf4 )).click()\cf6 ; \cf7 // confirm\
+
+\f1\i \cf2 driver
+\f2\i0 \cf4 .switchTo().alert().dismiss()\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 Dismiss cancel iptal anlam\uc0\u305 na gelir\
+Eger alert uzerinde bir yaz\uc0\u305  varsa onu yazd\u305 rmak icin \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i\fs26 \cf8 \cb9 driver
+\f2\i0 \cf10 .switchTo().alert().getText()\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+\
+Bilgi ister doldurursun  js prompt  \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\i\fs26 \cf2 \cb3 driver
+\f2\i0 \cf4 .findElement(By.
+\f1\i xpath
+\f2\i0 (\cf5 "//*[text()='Click for JS Prompt']"\cf4 )).click()\cf6 ; \cf7 //prompt\
+
+\f1\i \cf2 driver
+\f2\i0 \cf4 .switchTo().alert().sendKeys(\cf5 "hakan"\cf4 )\cf6 ;\
+
+\f1\i \cf2 driver
+\f2\i0 \cf4 .switchTo().alert().accept()\cf6 ;\
+Bilgi girilir ok demek icin tekrar accept denir\
+}

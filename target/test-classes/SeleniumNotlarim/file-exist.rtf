@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red153\green168\blue186;\red32\green32\blue32;\red88\green118\blue71;
+\red191\green100\blue38;\red133\green96\blue154;\red109\green109\blue109;\red153\green168\blue186;\red32\green32\blue32;
+\red133\green96\blue154;\red88\green118\blue71;\red191\green100\blue38;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c34510\c46275\c27843;
+\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c42745\c42745\c42745;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13040\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0                  Selenium da webdriver kullanarak web sayfalar\uc0\u305 n\u305  otomasyon yapabiliyoruz \
+Ancak bilgisayarimizda bulunun bir dosyan\uc0\u305 n varligini ara\u351 t\u305 rmak icin selenium webdriver isimize yaramaz.mesela bir dosyay\u305  indirdik ama indirip indirmedigini bilmiyoruz  Bunun icin javadan yararlanaca\u287 \u305 z. \
+Bunu yapmak icin \'f6ncelikle aradigimiz dosyan\uc0\u305 n yolunu belirlememiz gerekiyor. \
+Seleniumda driver yolunu yazarken System.setproperty kullan\uc0\u305 yorduk\
+Simdi bilgisayardaki dosyam\uc0\u305 z\u305 n yolunu bulmak icin System.getProperty methodundan yararlanaca\u287 \u305 z bunun icinde dosya yolunu yazaca\u287 \u305 z\
+Bunun icin olusturacagimiz class icin extens yapmam\uc0\u305 za gerek yok \'e7\'fcnk\'fc webdriver kullanmayaca\u287 \u305 m\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 String suankiClassyolu= System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.dir"\cf2 )\cf5 ;\
+\cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(suankiClassyolu)\cf5 ; \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 /Users/istmountain/IdeaProjects/JUnitDeneme\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 String bilgisayaryolu=System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.home"\cf2 )\cf5 ;\
+      \cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(bilgisayaryolu)\cf5 ; \cf7 // buda mevcut bilgisayarimdaki bir dosyanin yolu\
+      ///Users/istmountain kendime ait bilgisayarin yolu\
+\
+\
+      \cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.home"\cf2 )+\cf4 "/Desktop"\cf2 +\cf4 "/file-exist.rtf"\cf2 )\cf5 ;\
+      \cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(bilgisayaryolu+\cf4 "/Desktop"\cf2 +\cf4 "/file-exist.rtf"\cf2 )\cf5 ;\
+      \cf2 String dosyam= \cf4 "/Users/istmountain/Desktop/file-exist.rtf"\cf5 ;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 /Users/istmountain\
+\
+Projede \
+Bir lasin uzerine gelip sag t\uc0\u305 kla open in Finder dendi\u287 inde ilgili dosya \'e7\u305 kar sag t\u305 klan\u305 rsa  o dosyan\u305 n tam yolu \'e7\u305 kar\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.home"\cf2 )+\cf4 "/Desktop"\cf2 +\cf4 "file-exist.rtf"\cf2 )\cf5 ;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(bilgisayaryolu)\cf5 ; \cf7 // buda mevcut bilgisayarimdaki bir dosyanin yolu\
+///Users/istmountain kendime ait bilgisayarin yolu\
+\
+\
+\cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.home"\cf2 )+\cf4 "/Desktop"\cf2 +\cf4 "/file-exist.rtf"\cf2 )\cf5 ;\
+\cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(bilgisayaryolu+\cf4 "/Desktop"\cf2 +\cf4 "/file-exist.rtf"\cf2 )\cf5 ;\
+ \cf2 String dosyayolu=\cf4 "/Desktop"\cf2 +\cf4 "/file-exist.rtf"\cf5 ;\
+      \cf2 String dosya= bilgisayaryolu+dosyayolu\cf5 ;\
+\
+      \cf2 System.
+\f2\i \cf6 out
+\f1\i0 \cf2 .println(Files.
+\f2\i exists
+\f1\i0 (Paths.
+\f2\i get
+\f1\i0 (dosya)))\cf5 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Bu sekilde dosyan\uc0\u305 n olup olmadigini sorgulayabiliriz\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 String ortakolmayanyol=System.
+\f2\i getProperty
+\f1\i0 (\cf4 "user.home"\cf2 )\cf5 ;\
+\cf2 String ortakyol=\cf4 "/Downloads/dummy.txt"\cf5 ;\
+\cf2 String dosya=ortakolmayanyol+ortakyol\cf5 ;\
+\cf2 Assert.
+\f2\i assertTrue
+\f1\i0 (Files.
+\f2\i exists
+\f1\i0 (Path.
+\f2\i of
+\f1\i0 (dosya)))\cf5 ;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Files.exist(Paths.get\'94url\'94) \
+\
+Dosya upload etmek 3 adim\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs26 \cf8 \cb9  
+\f2\i \cf10 driver
+\f1\i0 \cf8 .get(\cf11 "https://the-internet.herokuapp.com/upload"\cf8 )\cf12 ;\
+\cf13 // 1. dosya sec butonu locate edilir\
+ \cf8 WebElement dosyasecbutonu=
+\f2\i \cf10 driver
+\f1\i0 \cf8 .findElement(By.
+\f2\i id
+\f1\i0 (\cf11 "file-upload"\cf8 ))\cf12 ;\
+ \cf13 // 2. hangi dosya gonderilecekse o dosyanin yolu belirlenir\
+ \cf8 String dosyayolu=\cf11 "/Users/istmountain/Downloads/dummy.txt"\cf12 ;\
+ \cf8 dosyasecbutonu.sendKeys(dosyayolu)\cf12 ;\
+ \cf8 WebElement uploadbutonu=
+\f2\i \cf10 driver
+\f1\i0 \cf8 .findElement(By.
+\f2\i id
+\f1\i0 (\cf11 "file-submit"\cf8 ))\cf12 ;\
+ \cf13 // 3. upload edilir\
+ \cf8 uploadbutonu.click()\cf12 ;\
+ \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+\
+.\
+\
+ \
+\
+\
+}

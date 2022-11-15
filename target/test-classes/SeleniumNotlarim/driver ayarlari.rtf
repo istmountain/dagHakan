@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red32\green32\blue32;\red225\green179\blue88;
+\red153\green168\blue186;\red153\green168\blue186;\red32\green32\blue32;\red191\green100\blue38;\red133\green96\blue154;
+\red86\green132\blue173;}
+{\*\expandedcolortbl;;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c88235\c70196\c34510;
+\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c52157\c37647\c60392;
+\csgenericrgb\c33725\c51765\c67843;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Webdriver driver=new driver()\
+\
+WebDriverManager.chromeDriver.setup()   boni garcia( driver kurulumu yapar ve driveri hazir hale getirir)\
+driver = new ChromeDriver; driver chrome uzerinden \'e7al\uc0\u305 smaya haz\u305 rd\u305 r\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->\
+\cf4 <dependency>\
+    <groupId>\cf5 io.github.bonigarcia\cf4 </groupId>\
+    <artifactId>\cf5 webdrivermanager\cf4 </artifactId>\
+    <version>\cf5 5.1.0\cf4 </version>\
+</dependency>     \cf2 <!-- Driver ayarlarini yapmak icin-->\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1  Bunu xml e eklememiz gerekir\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf6 \cb7 WebDriverManager.
+\f2\i chromedriver
+\f1\i0 ().setup()\cf8 ;\
+
+\f2\i \cf9 driver 
+\f1\i0 \cf6 = \cf8 new \cf6 ChromeDriver()\cf8 ;\
+
+\f2\i \cf9 driver
+\f1\i0 \cf6 .manage().window().maximize()\cf8 ;\
+
+\f2\i \cf9 driver
+\f1\i0 \cf6 .manage().timeouts().implicitlyWait(Duration.
+\f2\i ofSeconds
+\f1\i0 (\cf10 15\cf6 ))\cf8 ;\
+}

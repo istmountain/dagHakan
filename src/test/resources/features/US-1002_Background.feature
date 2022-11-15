@@ -1,7 +1,5 @@
-
-   @back
+@back
 Feature: US-1002 kullanici ortak adimlari background ile calistirir
-
        Background: ortak adim
          Given  kullanici amazon anasayfasinda
 

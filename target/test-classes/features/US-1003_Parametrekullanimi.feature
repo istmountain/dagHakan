@@ -1,11 +1,11 @@
+@back
 Feature: US-1003 kullanici parametre kullanarak configuration.properties dosyalarini kullanabilmeli
-
-   @par
   Scenario: TC-06 kullanici parametre kullanarak amazonda arama yapabilmeli
 
-    Given  kullanici amazon anasayfasinda
+    Given  kullanici "amazonUrl" anasayfasinda
     Then  kullanici "nutella" icin arama yapar
-    And   sonuclarin "nutella" icerdigini test eder
+    And   sonuclarin "Mutella" icerdigini test eder
+    And  kullanici 7 saniye bekler
     And   sayfayi kapatir
 
 

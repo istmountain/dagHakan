@@ -1,0 +1,66 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red153\green168\blue186;\red32\green32\blue32;\red133\green96\blue154;
+\red88\green118\blue71;\red191\green100\blue38;\red153\green168\blue186;\red32\green32\blue32;\red191\green100\blue38;
+\red133\green96\blue154;\red88\green118\blue71;}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c52157\c37647\c60392;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c74902\c39216\c14902;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c34510\c46275\c27843;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Bunun icin Actionclass tan yararlan\uc0\u305 l\u305 r bunun icin yeni bir obje olu\u351 turulur \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs26 \cf2 \cb3  
+\f1\i \cf4 driver
+\f2\i0 \cf2 .get(\cf5 "https://amazon.com"\cf2 )\cf6 ;\
+ \cf2 Actions actions= \cf6 new \cf2 Actions(
+\f1\i \cf4 driver
+\f2\i0 \cf2 )\cf6 ;\
+\cf2 WebElement hesapOlusturLinki =
+\f1\i \cf4 driver
+\f2\i0 \cf2 .findElement(By.
+\f1\i id
+\f2\i0 (\cf5 "nav-link-accountList"\cf2 ))\cf6 ;\
+\cf2 actions.moveToElement(hesapOlusturLinki).perform()\cf6 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+Yukar\uc0\u305 da g\'f6r\'fcld\'fc\u287 \'fc gibi Actions class i olu\u351 turulur. Ve parametresine driver yaz\u305 larak driverimiz hareket etme kabiliyeti kazan\u305 r. \
+Ard\uc0\u305 ndan aksiyon yapacagimiz yerin lokasyonu belirlenir \
+Ve yapacagimiz isleme Gore actions objesinin methodu secilir. \
+moveToElement : mouse ye lokasyon uzerine getirilir mouse hi\'e7 tiklanmadan lokasyon yeri otomotikmen gorunur olur \
+Muhakkak sonunda perform() yazilmalidrir.\
+doubleClick() \'e7ift t\uc0\u305 klama\
+clickAndHold() tek click yapar bekler\
+draganddrop() webelementi ta\uc0\u351 \u305 r s\'fcr\'fckler \
+Contextclick() sag tiklama yapar. \
+dragAndDrop bir nesneyi bir yerden al\uc0\u305 p digerine b\u305 rakma \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs26 \cf7 \cb8   
+\f2 Actions actions= \cf9 new \cf7 Actions(
+\f1\i \cf10 driver
+\f2\i0 \cf7 )\cf9 ;\
+\cf7 WebElement dragme= 
+\f1\i \cf10 driver
+\f2\i0 \cf7 .findElement(By.
+\f1\i id
+\f2\i0 (\cf11 "draggable"\cf7 ))\cf9 ;\
+\cf7 WebElement dropphere=
+\f1\i \cf10 driver
+\f2\i0 \cf7 .findElement(By.
+\f1\i id
+\f2\i0 (\cf11 "droppable"\cf7 ))\cf9 ;\
+ \cf7 actions.dragAndDrop(dragme\cf9 ,\cf7 dropphere).perform()\cf9 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \
+v\
+\
+\
+\
+\
+}

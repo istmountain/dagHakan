@@ -34,15 +34,18 @@ public class FacebookSD {
 
     @And("sayfaya giris yapilamadigini test eder")
     public void sayfayaGirisYapilamadiginiTestEder() {
-       // Assert.assertTrue(fb.hesabinibulgirisyap.isDisplayed());
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("Giriş Yap"));
-        System.out.println("Title :"+Driver.getDriver().getTitle());
+       Assert.assertTrue(fb.uyariYazisi.isDisplayed());
 
     }
 
 
+    @Then("gecerli {string}  email adresini girer")
+    public void gecerliEmailAdresiniGirer(String gecerliEmail) {
+         fb.email.sendKeys(gecerliEmail);
+    }
 
-
-
-
+    @And("gecerli {string} sifre girer")
+    public void gecerliSifreGirer(String gecerliSifre) {
+      fb.pass.sendKeys(gecerliSifre);
+    }
 }
